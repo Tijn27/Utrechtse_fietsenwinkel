@@ -1,9 +1,10 @@
 body{
 
-    background-image: url('../img/back.JPG');
+    background-image: url('../img/background.png');
     background-position: center; 
   background-repeat: repeat; 
-  background-size: cover; 
+  background-size: 50%; 
+  background-attachment: fixed;
 }
 
 .jumbotron{
@@ -22,25 +23,19 @@ nav {
     margin-right: center;
     width: 100%;
     height: 60px;
+    top: 0;
+    position: fixed;
 
 }
 
 
 .content {
     color: rgb(0, 0, 0);
-    background-color:  azure;
+    background-color: #398cfd;
     min-height: 50vh;
     padding: 2em;
 }
 
-.footer{
-
-    background-color:    azure;
-    min-height: 2vh;
-    padding: 2em;
-    margin-top: 2em;
-
-}
 
 #nav {
     text-align: center;
@@ -48,4 +43,15 @@ nav {
     margin-right: center;
 }
 
+.footer{
+
+    background-color:   lightgray;
+    min-height: 0,2px;
+    padding: 0,2px;
+    margin-top: 0,2px;
+    position: fixed; /* Set the navbar to fixed position */
+    bottom: 0; /* Position the navbar at the bottom of the page */
+    width: 100%; /* Full width */
+    margin-bottom: -19px
+}
 

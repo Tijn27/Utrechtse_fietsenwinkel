@@ -2,10 +2,11 @@
                     
 <footer>
         <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">
-            <p style="color:black;">Made by Tijn en Mac<br>&copy; Utrechtse Fietsen winkel 2019</p>
+        <div class="footer-copyright text-center py-1">
+            <p style="color:black;"> &copy; Utrechtse Fietsen winkel 2019</p>
         </div>
         <!-- Copyright -->
+       
     </footer>
 
 </section>

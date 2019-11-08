@@ -1,18 +1,13 @@
-<div class="card" style="width: 35rem;">
-  <img src="\img\fiets1home.jpeg" class="card-img-top" alt="...">
-</div>
-
-<div class="card" style="width: 35rem;">
-  <img src="..." class="card-img-top" alt="...">
-</div>
-
+<br>
+<br>
+<br>
 <br>
 
-<div class="card" style="width: 35rem;">
-  <img src="..." class="card-img-top" alt="...">
-</div>
 
-<div class="card" style="width: 35rem;">
-  <img src="..." class="card-img-top" alt="...">
+
+<a href="/index.php?content=contact" class="btn btn-primary"> 
+
+<div class="card" style="width: 32rem;">
+<img src="img/fietsass1.png" class="card-img-top" alt="Fietsen Assortiment">
   
-</div>
+</div></a>
