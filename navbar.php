@@ -18,7 +18,7 @@
         <a class="nav-link" id="active_proefrit" href="index.php?content=Proefrit">Proefrit</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="active_contact" href="index.php?content=Contact">Contackt</a>
+        <a class="nav-link" id="active_contact" href="index.php?content=Contact">Contact</a>
       </li>
     </ul>
   </div>
