@@ -4,4 +4,4 @@
         color: white;
     }
 </style>
-ProefRit
+ProefRit is niet van toepassing
