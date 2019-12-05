@@ -1,55 +1,48 @@
 <?php
   include("connect_db.php");
+  require_once ("functions.php");
 
   $email = $_POST["email"];
+  $password = $_POST["wachtwoord"];
 
-  if ( empty($_POST["email"])) {
-    echo '<div class="alert alert-warning" role="alert">U heeft geen e-mailadres ingevoerd. Dit is een verplicht veld. Probeer het nogmaals</div>';
-    header("Refresh: 5; url=./index.php?content=login");
+  $email = sanitize($email);
+  $password = sanitize($password);
+
+  if ( empty($_POST["email"]) || empty($_POST["wachtwoord"])) {
+    echo '<br><div class="alert alert-warning" role="alert">U heeft geen email of wachtwoord ingevuld, dit zijn verplichte velden</div>';
+    header("Refresh: 5; url=./index.php?content=registreer");
   } else {
-    $sql = "SELECT * FROM `login` WHERE `email` = '$email'";
-
+    $sql = "SELECT * FROM `gebruikers` WHERE `gebruikersnaam` = '$email'";
     $result = mysqli_query($conn, $sql);
-
     if ( mysqli_num_rows($result) == 1 ) {
-      echo '<div class="alert alert-info" role="alert">Het door u ingevoerde e-mailadres bestaat al. Kies een nieuw e-mailadres</div>';
-      header("Refresh: 5; ./index.php?content=login");
+      echo '<br><div class="alert alert-info" role="alert">De door u ingevoerde gebruikersnaam is al bezet, vul een andere gebruikersnaam in</div>';
+      header("Refresh: 5; ./index.php?content=registreer");
     } else {
+        $pw = password_hash($password, PASSWORD_BCRYPT);
 
-      date_default_timezone_set("Asia/Sakhalin");
-      $length_email = strlen($email);
-      $reverse_email = strrev($email);
-      $date = date('d,m,Y H: i:s ');
-      
-      $password = $date . $reverse_email ;
+        $sql = "INSERT INTO gebruikers(gebruikersnaam, wachtwoord, gebruikersrol)
+                        VALUES  ('$email',
+                                '$pw',
+                                1)";
+        $result = mysqli_query($conn, $sql);
 
-      $pw = password_hash($password, PASSWORD_BCRYPT);
-
-      $sql = "INSERT INTO `login` (`id`,
-                                `email`,
-                                `password`)
-                        VALUES  (NULL,
-                                '$email',
-                                '$password')";
-
-      $result = mysqli_query($conn, $sql);
-
-      $id = mysqli_insert_id($conn);
-
+        $id = mysqli_insert_id($conn);
+        var_dump($result);
       if ($result) {
-        $to = $email;
-        $subject = "registratie";
+        $to = "admin@utrechtsefietstenwinkel.nl";
+        $subject = "nieuwe registratie";
         $messege = "<!DOCTYPE html>
                       <html>
                         <style>
                         </style>
                         <head>
-                          <title>Actiatie Account</title>
+                          <title>nieuwe registratie</title>
                         </head>
                         <body>
-                          <h1>Hallo de registratie van uw account is gelukt!</h1>
-                          <p>Klik op de link hieronder om een wachtwoord intestellen en jouw account te activeren</p>
-                          <a href='http:/www.project-periode3.org/index.php?content=createpassword&id=" . $id . "&pw=" . $pw ."'>activatie</a>
+                          <h2>Er is een nieuw account aan gemaakt:</h2>
+                          <p>gebruikersnaam: $email</p>
+                          <p>Als u dit account niet heeft aangemaak kunt uw deze blokeren door op de onderstaande link te klikken</p>
+                          <a href='http://www.utrechtsefietsenwinkel.nl/index.php?content=gebruikers'>Beheer gebruikers</a>
                           <p></p>
                         </body>
                       </html>";
@@ -58,11 +51,11 @@
         $headers .= "From: admin@ExcersiceMe.nl". "\r\n";
 
         mail($to, $subject, $messege,$headers);
-        echo '<div class="alert alert-success" role="alert">U bent geregistreerd. Wij hebben een mail gestuurd naar dit adres. Klik daarin op de activatielink om uw registratie te voltooien.</div>';
+        echo '<br><div class="alert alert-success" role="alert">Het</div>';
         header("Refresh: 10; url=./index.php?content=home");
       } else {
-        echo '<div class="alert alert-danger" role="alert">Er is iets misgegaan tijdens het registreren, probeer het nogmaals</div>';
-        header("Refresh: 5; url=./index.php?content=home");
+        echo '<br><div class="alert alert-danger" role="alert">Er is iets misgegaan tijdens het registreren, probeer het nogmaals</div>';
+        header("Refresh: 5; url=./index.php?content=registreer");
       }
     }
   }
