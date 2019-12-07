@@ -5,11 +5,11 @@
         <br>
         <label for="exampleInputEmail1">Gebruikersnaam</label>
         <input type="text" class="form-control" id="InputEmail" aria-describedby="emailHelp"
-          placeholder="Voer uw e-mailadres in..." name="email" required>
+          placeholder="Voer een gebruikersnaam in..." name="email" required>
           <br>
           <label for="exampleInputEmail1">Wachtwoord</label>
           <input type="password" class="form-control" id="InputEmail" aria-describedby="wachtwoordHelp"
-                 placeholder="Voer een wachtwoord in" name="wachtwoord" required>
+                 placeholder="Voer een wachtwoord in..." name="wachtwoord" required>
       </div>
       <button type="submit" class="btn btn-primary">Maak een account!</button>
     </form><br>

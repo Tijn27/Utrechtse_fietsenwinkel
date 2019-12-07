@@ -24,6 +24,34 @@
       <li class="nav-item">
         <a class="nav-link" id="active_contact" href="index.php?content=Contact">Contact          </a>
       </li>
+      <?php 
+            if ( isset($_SESSION["id"])){
+
+              switch ($_SESSION["gebruikersrol"]) {
+                case 'admin':
+                  echo '<li class="nav-item">
+                    <a id="active_berichten" class="nav-link" href="index.php?content=admin">Berichten</a>
+                  </li>';
+                break;
+                case 'super-admin':
+                  echo '<li class="nav-item">
+                    <a id="active_berichten" class="nav-link" href="index.php?content=admin">Berichten</a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="active_gebruikers" class="nav-link" href="index.php?content=Gebruikers">Gebruikers</a>
+                  </li>';
+                break;
+            }
+              echo '<li class="nav-item">
+                      <a id="active_logout" class="nav-link" href="index.php?content=logout">Log Uit</a>
+                    </li>';
+            } else{
+              echo '
+                <li class="nav-item">
+                  <a id="active_login" class="nav-link" href="index.php?content=login">Aanmelden</a>
+                </li>';
+            }
+          ?>
     </ul>
   </div>
 </nav>

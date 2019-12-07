@@ -6,44 +6,47 @@
 </style>
 
 <!-- website -->
+<br>
 <?php 
     include("connect_db.php");
     include("functions.php");
 
-    $email = sanitize($_POST["email"]);
+    $email = sanitize($_POST["gebruikersnaam"]);
     $password = sanitize($_POST["password"]);
-
-    $sql = "SELECT * FROM  `login` WHERE `email` = '$email'";
+    echo "doorgegeven informatie: " . $email . $password;
+    $sql = "SELECT * FROM  `gebruikers` WHERE `naam` = '$email'";
 
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) == 1){
         //inloggen
         $record = mysqli_fetch_assoc($result);
-        $blowfish_password = $record["password"];
+        $blowfish_password = $record["wachtwoord"];
 
-        if ( password_verify($password, $blowfish_password)) {
+        var_dump ($record);
 
-            $_SESSION["id"] = $record["password"];
-            $_SESSION["email"] = $email;
-            $_SESSION["userrole"] = $record["userrole"];
-            
-            switch ($record["userrole"]){
-                case 'influencer':
+        if ( password_verify("test", $blowfish_password)) {
+
+            $_SESSION["id"] = $record["wachtwoord"];
+            $_SESSION["gebruikersnaam"] = $email;
+            $_SESSION["gebruikersrol"] = $record["gebruikersrol"];
+            echo "Yeah";
+            switch ($record["gebruikersrol"]){
+                case 1:
                     echo '<div class="alert alert-success" role="alert">Uw bent ingelogd en word nu doorgestuurd</div>';
                     header("Refresh: 3; ./index.php?content=home");
-                case 'klant':
-                    echo '<div class="alert alert-success" role="alert">Uw bent ingelogd en word nu doorgestuurd</div>';
+                case 2:
+                    echo '<div class="alert alert-success" role="alert">Uw bent ingelogd als admin u en word nu doorgestuurd</div>';
                     header("Refresh: 3; ./index.php?content=home");
                 break;
-                case 'admin':
-                    echo '<div class="alert alert-success" role="alert">Uw bent ingelogd als administrator en word nu doorgestuurd</div>';
-                    header("Refresh: 3; ./index.php?content=home");
-                break;
-                case 'super-admin':
-                    echo '<div class="alert alert-success" role="alert">Uw bent ingelogd als super-admin en word nu doorgestuurd</div>';
-                    header("Refresh: 3; ./index.php?content=home");
-                break;
+                // case 3:
+                //     echo '<div class="alert alert-success" role="alert">Uw bent ingelogd als administrator en word nu doorgestuurd 3</div>';
+                //     header("Refresh: 3; ./index.php?content=home");
+                // break;
+                // case 4:
+                //     echo '<div class="alert alert-success" role="alert">Uw bent ingelogd als super-admin en word nu doorgestuurd 4</div>';
+                //     header("Refresh: 3; ./index.php?content=home");
+                // break;
             }
           } else {
             // E-mailadres is niet bekend in database, terugsturen naar het inlogformulier

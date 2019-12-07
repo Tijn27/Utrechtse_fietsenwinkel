@@ -10,9 +10,9 @@
       <div class="form-group">
         <h1>Log hier in:</h1>
         <br>
-        <label for="exampleInputEmail1">E-mailadres</label>
-        <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp"
-          placeholder="Voer uw e-mailadres in..." name="email" required>
+        <label for="exampleInputEmail1">Gebruikersnaam</label>
+        <input type="gebruikersnaam" class="form-control" id="InputGebruikersnaam" aria-describedby="gebruikersnaamHelp"
+          placeholder="Voer uw Gebruikersnaam in..." name="gebruikersnaam" required>
           <br>
         <div class="form-group">
             <label for="exampleInputPassword1">Wachtwoord</label>
