@@ -1,3 +1,10 @@
+#achtergrond{
+    background-color: #f8f8f8;
+}
+body{
+    background-color: #f8f8f8;
+}
+
 #nav {
     background-color: #4da5fe;
 }
@@ -13,4 +20,15 @@
     border-width: 1px;
     border-radius: 10px;
     border-color: black;
+}
+
+#produckt{
+    margin: 5px;
+    border-color: white;
+}
+
+#center{
+    display: table;
+  margin: 0 auto;
+  border: 1px solid black;
 }

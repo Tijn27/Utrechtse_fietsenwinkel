@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 06 dec 2019 om 16:44
+-- Gegenereerd op: 09 dec 2019 om 08:08
 -- Serverversie: 5.7.26
 -- PHP-versie: 7.2.18
 
@@ -83,41 +83,15 @@ CREATE TABLE IF NOT EXISTS `gebruikers` (
   PRIMARY KEY (`id`),
   KEY `gebruikersnaam` (`naam`) USING BTREE,
   KEY `gebruikersrol` (`gebruikersrol`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `gebruikers`
 --
 
 INSERT INTO `gebruikers` (`id`, `naam`, `wachtwoord`, `gebruikersrol`, `aanmaakDatum`) VALUES
-(1, 'kees', 'es', 1, ''),
-(2, 'Pieter', 'petvanket', 2, ''),
-(3, 'pietjan', 'afsd', 1, ''),
-(6, 'test', 'test', 1, ''),
-(7, 'test', 'test', 1, ''),
-(8, 'test', 'test', 1, ''),
-(9, 'test', 'test', 1, ''),
-(10, 'test', 'test', 1, ''),
-(11, 'test', 'test', 1, ''),
-(12, 'test', 'test', 1, ''),
-(13, 'test', 'test', 1, ''),
-(14, 'tijn-smit@outlook.com', '$2y$10$Es58mly2FvcB.JnyfvBHMOP9InAS0zxEd6MkZMSSUxnaDrK1YvhWm', 1, ''),
-(15, 'tijn-smit@outlook.com', '$2y$10$Es58mly2FvcB.JnyfvBHMOP9InAS0zxEd6MkZMSSUxnaDrK1YvhWm', 1, ''),
-(16, 'test', 'ets', 1, '6 december'),
-(17, 'tijn-smit@outlook.com', '$2y$10$3B2ZgA5CT7KAiKA7od39aujcUhYIziKkkOiCyZPD2KxC2AaGAY6ae', 1, 'dsaf'),
-(18, 'tijn-smit@outlook.com', '$2y$10$3B2ZgA5CT7KAiKA7od39aujcUhYIziKkkOiCyZPD2KxC2AaGAY6ae', 1, 'dsaf'),
-(19, 'nieuwBegin', '$2y$10$1uQv4NzlgDjoTIgjuQNcRekVDJfk8pt9IL8BA4jBQ3lLige5t5MZ2', 1, '06,12,2019 17: 12:22'),
-(20, 'nieuwBegin', '$2y$10$1uQv4NzlgDjoTIgjuQNcRekVDJfk8pt9IL8BA4jBQ3lLige5t5MZ2', 1, '06,12,2019 17: 12:22'),
-(21, 'Karel', '$2y$10$JwsFFdvUoP7aCpVS6BrkCeWX0gbF3b3oJKmAx8zzvNTi/qJsbMBvi', 1, '06,12,2019 17: 13:29'),
-(22, 'Karel', '$2y$10$JwsFFdvUoP7aCpVS6BrkCeWX0gbF3b3oJKmAx8zzvNTi/qJsbMBvi', 1, '06,12,2019 17: 13:29'),
-(23, 'Karell', '$2y$10$/umr9fLwhk499bft.NkrGObx80u9TtGDw8AM7xljZS7I.k6L7cdqS', 1, '06,12,2019 17: 15:58'),
-(24, 'Karell', '$2y$10$/umr9fLwhk499bft.NkrGObx80u9TtGDw8AM7xljZS7I.k6L7cdqS', 1, '06,12,2019 17: 15:58'),
-(25, '&lt;img src=&quot;https://nos.nl/data/image/2016/08/29/312921/2048x1152.jpg&quot; &gt;', '$2y$10$KyZpNAu72rwPMxyB1P.QAOBqW1Ky3yD.W0NRdaKiw3qG1PK2LCbZu', 1, '06,12,2019 17: 20:02'),
-(26, '&lt;img src=&quot;https://nos.nl/data/image/2016/08/29/312921/2048x1152.jpg&quot; &gt;', '$2y$10$KyZpNAu72rwPMxyB1P.QAOBqW1Ky3yD.W0NRdaKiw3qG1PK2LCbZu', 1, '06,12,2019 17: 20:02'),
-(27, 'nos', '$2y$10$DbXCuKb2nN/Qfdv2gt9VOenMkBX/e1voRGNOqciXfRSb51/gDS4W.', 1, 'date'),
-(28, 'nos', '$2y$10$DbXCuKb2nN/Qfdv2gt9VOenMkBX/e1voRGNOqciXfRSb51/gDS4W.', 1, 'date'),
-(29, 'kese', '$2y$10$fXY0.WGJDcetrBankrPL6uo7YeNp33D76wy/h5.7u9TD9iFdcbkdm', 1, '06,12,2019 17: 38:23'),
-(30, 'late test', '$2y$10$R7JraGCF0SgWgUBy4nNE3OYxsC9r8sMwYkUMvNMEDol9TyCFI8F32', 1, '06,12,2019 17: 41:16');
+(34, 'test', '$2y$10$dbsaswIMtDQuzblNGn4/oOr93B907IUuGm0KATaKKCH0KSvvsEXSK', 1, '07,12,2019 17: 21:54'),
+(35, 'admin', '$2y$10$I4DLcSlVsfjQESawrr2RVOWRUOX3V6YNl7kTN05VF.D0oup5efF8y', 2, '07,12,2019 18: 04:12');
 
 -- --------------------------------------------------------
 
@@ -170,10 +144,9 @@ DROP TABLE IF EXISTS `product`;
 CREATE TABLE IF NOT EXISTS `product` (
   `productCode` int(11) NOT NULL,
   `productNaam` varchar(100) NOT NULL,
-  `kosten` int(11) NOT NULL,
+  `kosten` varchar(11) NOT NULL,
   `merk` varchar(50) NOT NULL,
   `serie` varchar(100) NOT NULL,
-  `TypeFietsId` int(11) NOT NULL,
   `versnellingen` varchar(100) DEFAULT NULL,
   `frameType` varchar(100) NOT NULL,
   `Garantie` varchar(100) DEFAULT NULL,
@@ -181,11 +154,19 @@ CREATE TABLE IF NOT EXISTS `product` (
   `oplaatTijd` varchar(100) DEFAULT NULL,
   `capaciteitAccu` varchar(100) DEFAULT NULL,
   `TypeFiets_TypeFietsId` int(11) NOT NULL,
-  `Gebruikers_Gebruikersnaam1` varchar(100) NOT NULL,
   PRIMARY KEY (`productCode`),
-  KEY `fk_Product_TypeFiets1_idx` (`TypeFiets_TypeFietsId`),
-  KEY `fk_Product_Gebruikers1_idx` (`Gebruikers_Gebruikersnaam1`)
+  KEY `fk_Product_TypeFiets1_idx` (`TypeFiets_TypeFietsId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `product`
+--
+
+INSERT INTO `product` (`productCode`, `productNaam`, `kosten`, `merk`, `serie`, `versnellingen`, `frameType`, `Garantie`, `accuPositie`, `oplaatTijd`, `capaciteitAccu`, `TypeFiets_TypeFietsId`) VALUES
+(1, 'Gazelle Orange C7+ HMB 2020 Dames', '2.099,-', 'Gazelle', 'Orange', '7', 'Damesfiets', '2', 'Achterdrager', '3 tot 6 uur (afhankelijk van accukeuze)', '300', 1),
+(2, 'Brinckers Granville M8 500 2020 Heren', '2.999,-', 'Brinckers', 'Granville', '8', 'Herenfiets', '2', 'Achterdrager', '4 tot 5 uur', '500', 1),
+(3, 'Brinckers Brisbane M8 2020 Dames', '2.849,-', 'Brinckers', 'Brisbane', '8', 'Damesfiets', '2', 'Achterdrager', '3,5 tot 10,5 uur (afhankelijk van accu- en laderkeuze)', '450', 1),
+(4, 'VanTuyl Lunar N8 Extra 2019 Dames', '649,-', 'VanTuyl', 'Lunar', '8', 'Damesfiets', '2', NULL, NULL, NULL, 3);
 
 -- --------------------------------------------------------
 
@@ -226,7 +207,16 @@ CREATE TABLE IF NOT EXISTS `typefiets` (
   `TypeFietsId` int(11) NOT NULL AUTO_INCREMENT,
   `TypeFiets` varchar(100) NOT NULL,
   PRIMARY KEY (`TypeFietsId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `typefiets`
+--
+
+INSERT INTO `typefiets` (`TypeFietsId`, `TypeFiets`) VALUES
+(1, 'Elektrische fiets'),
+(2, 'Sport fiets'),
+(3, 'Stads fiets');
 
 --
 -- Beperkingen voor geëxporteerde tabellen
@@ -261,7 +251,6 @@ ALTER TABLE `gebruikers`
 -- Beperkingen voor tabel `product`
 --
 ALTER TABLE `product`
-  ADD CONSTRAINT `fk_Product_Gebruikers1` FOREIGN KEY (`Gebruikers_Gebruikersnaam1`) REFERENCES `gebruikers` (`naam`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Product_TypeFiets1` FOREIGN KEY (`TypeFiets_TypeFietsId`) REFERENCES `typefiets` (`TypeFietsId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
