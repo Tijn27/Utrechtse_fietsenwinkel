@@ -25,7 +25,7 @@
 
         var_dump ($record);
 
-        if ( password_verify("test", $blowfish_password)) {
+        if ( password_verify($password, $blowfish_password)) {
 
             $_SESSION["id"] = $record["wachtwoord"];
             $_SESSION["gebruikersnaam"] = $email;
@@ -34,10 +34,10 @@
             switch ($record["gebruikersrol"]){
                 case 1:
                     echo '<div class="alert alert-success" role="alert">Uw bent ingelogd en word nu doorgestuurd</div>';
-                    header("Refresh: 3; ./index.php?content=home");
+                    header("Refresh: 30; ./index.php?content=home");
                 case 2:
                     echo '<div class="alert alert-success" role="alert">Uw bent ingelogd als admin u en word nu doorgestuurd</div>';
-                    header("Refresh: 3; ./index.php?content=home");
+                    header("Refresh: 30; ./index.php?content=home");
                 break;
                 // case 3:
                 //     echo '<div class="alert alert-success" role="alert">Uw bent ingelogd als administrator en word nu doorgestuurd 3</div>';
@@ -51,7 +51,7 @@
           } else {
             // E-mailadres is niet bekend in database, terugsturen naar het inlogformulier
             echo '<div class="alert alert-danger" role="alert">Uw wachtwoord is niet correct, probeer het nogmaals</div>';
-            header("Refresh: 2; url=./index.php?content=login");
+            header("Refresh: 4; url=./index.php?content=login");
           }
 
     } else{
