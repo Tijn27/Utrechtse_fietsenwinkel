@@ -28,29 +28,21 @@
             if ( isset($_SESSION["id"])){
 
               switch ($_SESSION["gebruikersrol"]) {
-                case 'admin':
+                case 2:
                   echo '<li class="nav-item">
-                    <a id="active_berichten" class="nav-link" href="index.php?content=admin">Berichten</a>
+                    <a id="active_berichten" class="nav-link" href="index.php?content=beheren">Beheren</a>
                   </li>';
                 break;
-                case 'super-admin':
+                case 1:
                   echo '<li class="nav-item">
-                    <a id="active_berichten" class="nav-link" href="index.php?content=admin">Berichten</a>
-                  </li>
-                  <li class="nav-item">
-                    <a id="active_gebruikers" class="nav-link" href="index.php?content=Gebruikers">Gebruikers</a>
+                    <a id="active_berichten" class="nav-link" href="index.php?content=rooster">Rooster</a>
                   </li>';
                 break;
             }
               echo '<li class="nav-item">
                       <a id="active_logout" class="nav-link" href="index.php?content=logout">Log Uit</a>
                     </li>';
-            } else{
-              echo '
-                <li class="nav-item">
-                  <a id="active_login" class="nav-link" href="index.php?content=login">Aanmelden</a>
-                </li>';
-            }
+            } 
           ?>
     </ul>
   </div>

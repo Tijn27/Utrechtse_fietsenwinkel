@@ -25,7 +25,7 @@ session_start();
 <?php include("./navbar.php");?>
     <main class="container">
       <div class="row">
-        <div class="col-12"><?php include("./pageloader.php"); ?></div>
+        <div class="col-12"><br><?php include("./pageloader.php"); ?></div>
       </div>
     </main>
 
