@@ -16,7 +16,7 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         echo "<form action='index.php?content=product' method='get' id='produckt' class='card' class='col' style='width: 18rem;'>
-        <img src='./img/webshop/" . $row["productCode"] . "/1.jpg' class='card-img-top' alt='afbeelding fiets'>
+        <img src='./img/webshop/5/" . $row["productNaam"] . ".png' class='card-img-top' alt='afbeelding fiets'>
         <div class='card-body'>
             <h5 class='card-title'>" . $row["productNaam"] . "</h5>
             <p class='card-text'> <li>Frametype: " . $row["frameType"] . "</li>

@@ -29,16 +29,6 @@
                     </div>
                 </div>
               </div>";
-                // echo "<form action='index.php?content=product' method='get' id='produckt' class='card' class='col' style='width: 100%;'>
-                // <img src='./img/webshop/" . $row["productCode"] . "/1.jpg' class='card-img-top' alt='afbeelding fiets'>
-                // <div class='card-body'>
-                //     <h5 class='card-title'>" . $row["productNaam"] . "</h5>
-                //     <p class='card-text'> <li>Frametype: " . $row["frameType"] . "</li>
-                //                         <li>Aantal versnellingen: " . $row["versnellingen"] . "</li>
-                //                         <li>Garantie: " . $row["Garantie"] . " jaar</li>
-                //                         <li>€ " . $row["kosten"] . "</li></p>
-                //     <button type='submit' name='naam' value='" . $row["productNaam"] . "' class='btn btn-primary btn-block btn-lg'>Bekijk Product</button>     
-                // </div></form>";
             }
         } else {
             echo "Geen informaie over dit produckt gevonden";
