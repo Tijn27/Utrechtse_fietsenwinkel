@@ -1,7 +1,7 @@
 <form action="./index.php?content=./fuctions/toevoegen_script" method="post" enctype="multipart/form-data">
   <div class="form-row" >
     <div class="form-group col-md-6">
-      <label for="naam">Foto</label>
+      <label for="afbeeldign">Hooft Afbeelding</label>
       <input type="file" name="afbeelding" required>
     </div>
     <div class="form-group col-md-6">

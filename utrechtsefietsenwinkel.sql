@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 09 dec 2019 om 08:08
+-- Gegenereerd op: 09 jan 2020 om 20:33
 -- Serverversie: 5.7.26
 -- PHP-versie: 7.2.18
 
@@ -31,9 +31,21 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `afbeelding`;
 CREATE TABLE IF NOT EXISTS `afbeelding` (
   `idafbeelding` int(11) NOT NULL AUTO_INCREMENT,
+  `IdFiets` int(11) NOT NULL,
   `afbeeldingUrl` varchar(100) NOT NULL,
-  PRIMARY KEY (`idafbeelding`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`idafbeelding`),
+  KEY `fk_afbeelding_Product` (`IdFiets`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `afbeelding`
+--
+
+INSERT INTO `afbeelding` (`idafbeelding`, `IdFiets`, `afbeeldingUrl`) VALUES
+(8, 1, '1.jpg'),
+(9, 2, '1.jpg'),
+(10, 3, '1.jpg'),
+(11, 4, '1.jpg\r\n');
 
 -- --------------------------------------------------------
 
@@ -83,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `gebruikers` (
   PRIMARY KEY (`id`),
   KEY `gebruikersnaam` (`naam`) USING BTREE,
   KEY `gebruikersrol` (`gebruikersrol`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `gebruikers`
@@ -91,7 +103,9 @@ CREATE TABLE IF NOT EXISTS `gebruikers` (
 
 INSERT INTO `gebruikers` (`id`, `naam`, `wachtwoord`, `gebruikersrol`, `aanmaakDatum`) VALUES
 (34, 'test', '$2y$10$dbsaswIMtDQuzblNGn4/oOr93B907IUuGm0KATaKKCH0KSvvsEXSK', 1, '07,12,2019 17: 21:54'),
-(35, 'admin', '$2y$10$I4DLcSlVsfjQESawrr2RVOWRUOX3V6YNl7kTN05VF.D0oup5efF8y', 2, '07,12,2019 18: 04:12');
+(35, 'admin', '$2y$10$I4DLcSlVsfjQESawrr2RVOWRUOX3V6YNl7kTN05VF.D0oup5efF8y', 2, '07,12,2019 18: 04:12'),
+(37, 'tester', '$2y$10$8ZXSzQrtOGA20ec4v7imC.HSsXSPVkQFBDstVPhmnKwKBH2crcCda', 1, '09,12,2019 21: 00:40'),
+(38, 'fietsenmaker', '$2y$10$HvKDyL7GRm9F6dwh8itAYesZpK8ti5I5cRaM4nBsukzX2FMKY.mDC', 1, '28,12,2019 17: 41:40');
 
 -- --------------------------------------------------------
 
@@ -226,7 +240,7 @@ INSERT INTO `typefiets` (`TypeFietsId`, `TypeFiets`) VALUES
 -- Beperkingen voor tabel `afbeelding`
 --
 ALTER TABLE `afbeelding`
-  ADD CONSTRAINT `fk_afbeelding_Product` FOREIGN KEY (`idafbeelding`) REFERENCES `product` (`productCode`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_afbeelding_Product` FOREIGN KEY (`IdFiets`) REFERENCES `product` (`productCode`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Beperkingen voor tabel `factuur`
