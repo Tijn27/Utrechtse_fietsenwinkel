@@ -12,10 +12,16 @@
         if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
+                //url afbeelding ophalen uit de database
+                $IdFiets = $row["productCode"];
+                $sql = "SELECT afbeeldingUrl FROM afbeelding WHERE IdFiets = $IdFiets";
+                $resultId = $conn->query($sql);
+                $rowId = $resultId->fetch_assoc();
+                //paginainhoud
                 echo "<div class='row' style='background-color: white;'>
                 <div class='col'>
                     <div style='width: 100%;'>
-                        <img src='./img/webshop/" . $row["productCode"] . "/1.jpg' class='card-img-top' alt='afbeelding fiets'>
+                        <img src='./img/webshop/" . $IdFiets . "/" . $rowId["afbeeldingUrl"] . "' class='card-img-top' alt='afbeelding fiets'>
                     </div>
                 </div>
                 <div class='col'>

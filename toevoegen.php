@@ -25,7 +25,7 @@
       <input type="text" class="form-control" id="serie" name="serie" required>
     </div>
     <div class="form-group col-md-6">
-      <label for="versnellingen">versnellingen</label>
+      <label for="versnellingen">aantal versnellingen</label>
       <input type="text" class="form-control" id="versnellingen" name="versnellingen">
     </div>
   </div>
@@ -35,7 +35,7 @@
       <input type="text" class="form-control" id="frametype" name="frametype" required>
     </div>
     <div class="form-group col-md-6">
-      <label for="garantie">Garantie</label>
+      <label for="garantie">Garantie in jaren</label>
       <input type="text" class="form-control" id="garantie" name="garantie" required>
     </div>
   </div>
@@ -51,7 +51,7 @@
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="capacitijdAccu">Capacitijd accu</label>
+      <label for="capacitijdAccu">Capacitijd accu (Wh)</label>
       <input type="text" class="form-control" id="capacitijdAccu" name="capacitijdAccu">
     </div>
     <div class="form-group col-md-6">

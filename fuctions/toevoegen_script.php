@@ -73,7 +73,6 @@
       if(in_array($fileActualExt, $allowed)){
         if($fileError === 0) {
           if ($fileSize < 1000000){
-            echo $productcode;
             mkdir("img/webshop/" . $productcode);
             $fileNameNew = $_POST["naam"] . "." . $fileActualExt;
             $fileDestination = 'img/webshop/' . $productcode . '/' . $fileNameNew;
