@@ -9,9 +9,18 @@
       <!-- <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li> -->
-      <li class="nav-item">
-        <a class="nav-link" id="active_producten" href="index.php?content=Producten">Producten   </a> 
-      </li> 
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="active_producten" data-toggle="dropdown" href="index.php?content=Producten" role="button" aria-haspopup="true" aria-expanded="false">Producten</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="index.php?content=Producten">Alle bekijken</a>
+          <a class="dropdown-item" href="index.php?content=ProductenElektrisch">Elektrische fietsen</a>
+          <a class="dropdown-item" href="index.php?content=ProductenStad">Stadsfietsen</a>
+          <a class="dropdown-item" href="index.php?content=ProductenSport">Sportieve fietsen</a>
+
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="index.php?content=ProductenAccessoires">Accessoires</a>
+        </div>
+      </li>
       &nbsp;
       <li class="nav-item">
         <a class="nav-link" id="active_reparatie" href="index.php?content=Reparatie">Reparatie    </a>

@@ -22,7 +22,7 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="serie">serie</label>
-      <input type="text" class="form-control" id="serie" name="serie" required>
+      <input type="text" class="form-control" id="serie" name="serie">
     </div>
     <div class="form-group col-md-6">
       <label for="versnellingen">aantal versnellingen</label>
@@ -32,11 +32,11 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="frametype">Frametype</label>
-      <input type="text" class="form-control" id="frametype" name="frametype" required>
+      <input type="text" class="form-control" id="frametype" name="frametype">
     </div>
     <div class="form-group col-md-6">
       <label for="garantie">Garantie in jaren</label>
-      <input type="text" class="form-control" id="garantie" name="garantie" required>
+      <input type="text" class="form-control" id="garantie" name="garantie">
     </div>
   </div>
   <div class="form-row">
@@ -56,9 +56,10 @@
     </div>
     <div class="form-group col-md-6">
         <select class="form-control" name="typeFiets">
-            <option value="3">stadsfiets</option>
-            <option value="2">sportfiets</option>
-            <option value="1">electrischefiets</option>
+          <option value="3">stadsfiets</option>
+          <option value="2">sportfiets</option>
+          <option value="1">electrischefiets</option>
+          <option value="4">accessoires</option>
         </select> 
     </div>
   </div>

@@ -22,7 +22,7 @@
     $typeFiets = sanitize($_POST["typeFiets"]);
 
     //check of alles is ingevuld
-    if (empty($_POST["naam"]) || empty($_POST["prijs"]) || empty($_POST["merk"]) || empty($_POST["serie"]) || empty($_POST["frametype"]) || empty($_POST["garantie"])) {
+    if (empty($_POST["naam"]) || empty($_POST["prijs"]) || empty($_POST["merk"])) {
         echo '<br><div class="alert alert-warning" role="alert">U heeft niet alle vereise gegevens ingevuld</div>';
         header("Refresh: 5; url=./index.php?content=toevoegen");
       } else {
