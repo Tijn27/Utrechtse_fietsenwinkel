@@ -5,12 +5,39 @@ include("./fuctions/connect_db.php");
 include("./fuctions/functions.php");
 include("securety.php");
 
-    // $naam = $_GET["naam"];
-    //         $sql = "SELECT * FROM product where productNaam = '$naam'";
-    //         $result = $conn->query($sql);
+
+$code = $_POST["naam"];
+
+$sql = "SELECT afbeeldingUrl FROM afbeelding WHERE idFiets = '$code'";
+$result = $conn->query($sql);
+
+echo"<div class='row'>";
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+      echo "<div class='col'><div class='card' style='width: 18rem;'>
+              <img src='./img/webshop/" . $code . "/" . $row["afbeeldingUrl"] . "' class='card-img-top' alt='afbeelding niet gevonden'>
+            </div></div>";
+    }
+} else {
+    echo "Geen afbeeldingen gevonden";
+}
+echo "</div><input type='file' name='afbeelding' required>";
+
 ?>
 
-<form action="./index.php?content=./fuctions/toevoegen_script" method="post" enctype="multipart/form-data">
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form action="./index.php?content=./fuctions/toevoegen_script" method="post" enctype="multipart/form-data">
   <div class="form-row" >
     <div class="form-group col-md-6">
       <label for="afbeeldign">Hooft Afbeelding</label>
@@ -76,4 +103,4 @@ include("securety.php");
   </div>
   <button type="submit" name="submit" class="btn btn-primary">Voeg toe</button>
 </form>
-<br>
+<br> -->

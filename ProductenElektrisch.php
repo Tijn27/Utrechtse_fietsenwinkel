@@ -34,7 +34,7 @@ if ($result->num_rows > 0) {
 
                 switch ($_SESSION["gebruikersrol"]) {
                 case 2:
-                    echo "  <form action='index.php?content=bewerken' method='post' id='produckt'><button type='submit' name='naam' value='" . $row["productNaam"] . "' class='btn btn-secondary btn-block btn-lg'>Bewerken</button></form>
+                    echo "  <form action='index.php?content=bewerken' method='post' id='produckt'><button type='submit' name='naam' value='" . $row["productCode"] . "' class='btn btn-secondary btn-block btn-lg'>Bewerken</button></form>
                             <form action='index.php?content=verwijderen' method='post' id='produckt'><input type='hidden' name='productNaam' value=" . $row["productNaam"] . "><button type='submit' name='naam' value='" . $row["productCode"] . "' class='btn btn-danger btn-block btn-lg'>Verwijderen</button></form>";
                         break;
                 }

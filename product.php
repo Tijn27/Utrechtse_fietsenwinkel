@@ -37,13 +37,13 @@
                 </div>
                 <div class='col'>
                     <div style='width: 100%;'>
-                        <form action='./index.php?content=bestelling' method='post' class='card-body'>
+                        <form action='./index.php?content=./fuctions/bestelling_script' method='post' class='card-body'>
                             <h5 class='card-title'>" . $row["productNaam"] . "</h5>
                             <p class='card-text'>Merk: " . $row["merk"] . "</p>
                             <p class='card-text'>Type: " . $typeFiets . "</p>
                             <h5 class='card-title'>€ " . $row["kosten"] . "</h5>
                             <button formaction='./index.php?content=Proefrit' style='background-color:#67ca67;border-color: #67ca67;' class='btn btn-primary'>Maak een proefrit</button><br><br>
-                            <button style='background-color:#5cc3ce;border-color: #5cc3ce;' class='btn btn-primary'>Plaats in bestelling</button>
+                            <button type='submit' name='naam' value='$IdFiets' style='background-color:#5cc3ce;border-color: #5cc3ce;' class='btn btn-primary'>Plaats in bestelling</button>
                             <hr>
                         </div>
                     </div>
