@@ -13,7 +13,6 @@
 
     $email = sanitize($_POST["gebruikersnaam"]);
     $password = sanitize($_POST["password"]);
-    echo "doorgegeven informatie: " . $email . $password;
     $sql = "SELECT * FROM  `gebruikers` WHERE `naam` = '$email'";
 
     $result = mysqli_query($conn, $sql);
@@ -23,21 +22,19 @@
         $record = mysqli_fetch_assoc($result);
         $blowfish_password = $record["wachtwoord"];
 
-        var_dump ($record);
 
         if ( password_verify($password, $blowfish_password)) {
 
             $_SESSION["id"] = $record["wachtwoord"];
             $_SESSION["gebruikersnaam"] = $email;
             $_SESSION["gebruikersrol"] = $record["gebruikersrol"];
-            echo "Yeah";
             switch ($record["gebruikersrol"]){
                 case 1:
                     echo '<div class="alert alert-success" role="alert">Uw bent ingelogd en word nu doorgestuurd</div>';
-                    header("Refresh: 30; ./index.php?content=home");
+                    header("Refresh: 5; ./index.php?content=home");
                 case 2:
                     echo '<div class="alert alert-success" role="alert">Uw bent ingelogd als admin u en word nu doorgestuurd</div>';
-                    header("Refresh: 30; ./index.php?content=home");
+                    header("Refresh: 5; ./index.php?content=home");
                 break;
                 // case 3:
                 //     echo '<div class="alert alert-success" role="alert">Uw bent ingelogd als administrator en word nu doorgestuurd 3</div>';

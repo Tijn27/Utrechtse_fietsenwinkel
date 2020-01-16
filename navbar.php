@@ -55,8 +55,16 @@
                       <a id="active_logout" class="nav-link" href="index.php?content=logout">Log Uit</a>
                     </li>';
             } 
+            if (!isset($_COOKIE['winkelwagen'])){
+            }elseif($_COOKIE['winkelwagen'] == '[]'){
+            }else{
+              echo '<li class="nav-item">
+                      <a id="active_bestellingen" class="nav-link" href="index.php?content=bestelling">bestelling</a>
+                    </li>';
+            }
           ?>
     </ul>
   </div>
 </nav>
+
 

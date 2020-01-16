@@ -12,7 +12,7 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="prijs">Prijs</label>
-      <input type="text" class="form-control" id="prijs" name="prijs" required>
+      <input type="number" class="form-control" id="prijs" name="prijs" required>
     </div>
     <div class="form-group col-md-6">
       <label for="merk">merk</label>
