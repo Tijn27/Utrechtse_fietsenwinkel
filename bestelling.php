@@ -68,8 +68,8 @@ if(!isset($_COOKIE['winkelwagen'])) {
             </div>
         </div>
         </li><br>";
-    echo "<div class='row'><div class='col-sm'><button style='background-color:#67ca67;border-color: #67ca67;' class='btn btn-primary'>Verder Winkelen</button>
-    <button style='background-color:#5cc3ce;border-color: #5cc3ce;' class='btn btn-primary'>Bestellen</button></div></div>";
+    echo "<div class='row'><div class='col-sm'> <a href='index.php?content=Producten' style='background-color:#67ca67;border-color: #67ca67;' class='btn btn-primary'>Verder Winkelen</a>
+                                                <a href='index.php?content=klantGegevens' style='background-color:#5cc3ce;border-color: #5cc3ce;' class='btn btn-primary'>Bestellen</a></div></div>";
     echo "</ul>";
 }
 ?>
