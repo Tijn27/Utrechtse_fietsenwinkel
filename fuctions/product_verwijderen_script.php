@@ -1,6 +1,5 @@
 <?php
 $code = $_POST['productCode'];
-
 if(isset($_COOKIE['winkelwagen'])) {
     $data = json_decode($_COOKIE['winkelwagen'], true);
     if(in_array($code, $data)){
@@ -11,8 +10,10 @@ if(isset($_COOKIE['winkelwagen'])) {
         header("Refresh: 0; url=./index.php?content=bestelling");
     }else{
         echo "er is iets fout gegaan";
+        header("Refresh: 3; url=./index.php?content=bestelling");
     }
 } else {
-    echo "nope";
+    echo "er is iets fout gegaan";
+    header("Refresh: 3; url=./index.php?content=bestelling");
 }
 ?>

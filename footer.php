@@ -20,7 +20,7 @@
                 </div>
                 <div class='col'>
                     <a id='text_footer'>Service:</a><br>
-                    <a href='index.php?content=reparatie' id='text_footer_small'>Plan een reparatie in</a><br>
+                    <a href='index.php?content=reparatie' id='text_footer_small'>Plan een reparatie</a><br>
                     <a href='index.php?content=proefrit' id='text_footer_small'>Maak een proefrit</a><br>
                 </div>
             </div>

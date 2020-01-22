@@ -1,4 +1,4 @@
-<h1>bestelling:</h1><br><form method='post' action='./index.php?content=fuctions/aantal_bewerken'>
+<h1>bestelling:</h1><br>
 <?php
 require_once("./fuctions/connect_db.php");
 
@@ -28,6 +28,7 @@ if(!isset($_COOKIE['winkelwagen'])) {
                     <p style='text-align: right;'>Aantal:</p>
                 </div>
                 <div class='col-sm'>
+                <form action='./index.php?content=./fuctions/aantal_bewerken' method='post'>
                     <select class='custom-select' name='select' id='inputGroupSelect01'>";
                     for($x=1; $x<=10; $x++){
                         echo"<option value='$x' "; if($_COOKIE[$value] == $x){echo "selected";} echo " >$x</option>";
@@ -40,12 +41,15 @@ if(!isset($_COOKIE['winkelwagen'])) {
                     echo "</select>
                 </div>
                 <div class='col-sm'>
-                    <input type='hidden' value='$value' name='productCode'>
-                    <button type='button' class='btn btn-outline-dark'>Opslaan</button>
+                        <input type='hidden' value='$value' name='productCode'>
+                        <button type='submit' class='btn btn-outline-dark'>Opslaan</button>
+                    </form>
                 </div>
                 <div class='col-sm'>
-                    <input type='hidden' value='$value' name='productCode'>
-                    <input formaction='./index.php?content=./fuctions/product_verwijderen_script' type='image' src='./img/kruisje.png' alt='verwijderen' width='34' height='34'>
+                    <form action='./index.php?content=./fuctions/product_verwijderen_script' method='post'> 
+                        <input type='hidden' value='$value' name='productCode'>
+                        <input type='image' src='./img/kruisje.png' alt='verwijderen' width='34' height='34'>
+                    </form>
                 </div>
             </div></li>";
     }
@@ -69,4 +73,3 @@ if(!isset($_COOKIE['winkelwagen'])) {
     echo "</ul>";
 }
 ?>
-</form>
