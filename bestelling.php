@@ -1,14 +1,13 @@
-<h1>bestelling:</h1><br>
+<h1>bestelling:</h1><br><form method='post' action='./index.php?content=fuctions/aantal_bewerken'>
 <?php
 require_once("./fuctions/connect_db.php");
-
-$totaal = 0;
 
 if(!isset($_COOKIE['winkelwagen'])) {
     echo"U heeft geen producten in u bestelling staan";
 }elseif($_COOKIE['winkelwagen'] == '[]'){
     echo"U heeft geen producten in u bestelling staan";
 }else {
+    $totaal = 0;
     $winkelwagen = json_decode($_COOKIE['winkelwagen'], true);
     echo "<ul class='list-group list-group-flush'>";
     foreach($winkelwagen as $value){
@@ -29,9 +28,10 @@ if(!isset($_COOKIE['winkelwagen'])) {
                     <p style='text-align: right;'>Aantal:</p>
                 </div>
                 <div class='col-sm'>
-                    <select class='custom-select' id='inputGroupSelect01'>";
+                    <select class='custom-select' name='select' id='inputGroupSelect01'>";
                     for($x=1; $x<=10; $x++){
                         echo"<option value='$x' "; if($_COOKIE[$value] == $x){echo "selected";} echo " >$x</option>";
+                       
                     }
                     if($_COOKIE[$value] > 10){
                     echo
@@ -39,10 +39,14 @@ if(!isset($_COOKIE['winkelwagen'])) {
                     }
                     echo "</select>
                 </div>
-                <form method='post' class='col-sm' action='./index.php?content=fuctions/product_verwijderen_script'>
+                <div class='col-sm'>
                     <input type='hidden' value='$value' name='productCode'>
-                    <input type='image' src='./img/kruisje.png' alt='verwijderen' width='34' height='34'>
-                </form>
+                    <button type='button' class='btn btn-outline-dark'>Opslaan</button>
+                </div>
+                <div class='col-sm'>
+                    <input type='hidden' value='$value' name='productCode'>
+                    <input formaction='./index.php?content=./fuctions/product_verwijderen_script' type='image' src='./img/kruisje.png' alt='verwijderen' width='34' height='34'>
+                </div>
             </div></li>";
     }
     echo "<li class='list-group-item' style='background-color: #d1d9ff;'>
@@ -60,8 +64,9 @@ if(!isset($_COOKIE['winkelwagen'])) {
             </div>
         </div>
         </li><br>";
-    echo "<div class='row'><div class='col-sm'><a href='./index.php?content=producten' style='background-color:#67ca67;border-color: #67ca67;' class='btn btn-primary'>Verder Winkelen</a>
-    <a href='./index.php?content=klantGegevens' style='background-color:#5cc3ce;border-color: #5cc3ce;' class='btn btn-primary'>Bestellen</a></div></div>";
+    echo "<div class='row'><div class='col-sm'><button style='background-color:#67ca67;border-color: #67ca67;' class='btn btn-primary'>Verder Winkelen</button>
+    <button style='background-color:#5cc3ce;border-color: #5cc3ce;' class='btn btn-primary'>Bestellen</button></div></div>";
     echo "</ul>";
 }
 ?>
+</form>

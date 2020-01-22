@@ -24,11 +24,13 @@ session_start();
 <!-- navbar -->
 <?php include("./navbar.php");?>
     <main class="container">
+      <!-- pagina -->
       <div class="row">
-        <div class="col-12"><br><?php include("./pageloader.php"); ?></div>
+        <div id='main' class="col-12"><br><?php include("./pageloader.php"); ?></div>
       </div>
     </main>
-
+    <!-- footer -->
+    <?php include("./footer.php");?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

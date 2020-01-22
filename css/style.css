@@ -4,6 +4,9 @@
 body{
     background-color: #f8f8f8;
 }
+#main{
+    min-height: 70vh;
+}
 
 #nav {
     background-color: #4da5fe;
@@ -39,4 +42,38 @@ body{
     margin-right: auto;
     width: 30%;
     top:50%;
+}
+
+footer{
+    margin-top: 20px;
+    height: auto;
+    background-color: black;
+}
+
+#footer_title{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    margin: auto;
+}
+
+#footer_content{
+    height: auto;
+    background-color: #19416a;
+    padding-bottom: 20px;
+}
+
+#text_footer{
+    color: #eeeeee;
+    font-size: 20px;
+}
+
+#text_footer_small{
+    color: #eeeeee;
+    font-size: 15px;
+    margin-left: 5px;
+}
+
+#footer_bottem{
+    background-color: #112f4f;
 }
