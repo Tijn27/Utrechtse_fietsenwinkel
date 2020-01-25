@@ -11,27 +11,27 @@
         </div>
         <div class="form-group">
           <label for="email">E-mailadres</label>
-          <input type="text" class="form-control" id="email" name="email">
+          <input type="text" class="form-control" id="email" name="email"required>
         </div>
         <div class="form-group">
           <label for="tel">Telefoonnummer</label>
-          <input type="text" class="form-control" id="tel" name="tel">
+          <input type="text" class="form-control" id="tel" name="tel"required>
         </div>
         <div class="form-group">
           <label for="postcode">Postcode</label>
-          <input type="text" class="form-control" id="postcode" name="postcode">
+          <input type="text" class="form-control" id="postcode" name="postcode"required>
         </div>
         <div class="form-group">
           <label for="huisnummer">Huisnummer + Toevoeing</label>
-          <input type="text" class="form-control" id="huisnummer" name="huisnummer">
+          <input type="number" class="form-control" id="huisnummer" name="huisnummer"required>
         </div>
         <div class="form-group">
           <label for="straat">Straat</label>
-          <input type="text" class="form-control" id="straat" name="straat">
+          <input type="text" class="form-control" id="straat" name="straat"required>
         </div>
         <div class="form-group">
           <label for="oplaatTijd">Plaats</label>
-          <input type="text" class="form-control" id="plaats" name="plaats">
+          <input type="text" class="form-control" id="plaats" name="plaats"required>
         </div>
       <button type="submit" name="submit" class="btn btn-primary">Bestellen</button>
     </form>

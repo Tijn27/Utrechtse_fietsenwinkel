@@ -1,5 +1,5 @@
-<!-- Verbinding met de DB opzetten -->
 <?php
+    //verbinding met de database opzetten
     define("SERVERNAME", "localhost");
     define("USERNAME", "root");
     define("PASSWORD", "");
