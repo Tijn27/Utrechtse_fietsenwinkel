@@ -22,8 +22,8 @@
           <input type="text" class="form-control" id="postcode" name="postcode"required>
         </div>
         <div class="form-group">
-          <label for="huisnummer">Huisnummer + Toevoeing</label>
-          <input type="number" class="form-control" id="huisnummer" name="huisnummer"required>
+          <label for="huisnummer">Huisnummer + Toevoeging</label>
+          <input type="text" class="form-control" id="huisnummer" name="huisnummer"required>
         </div>
         <div class="form-group">
           <label for="straat">Straat</label>

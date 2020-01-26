@@ -88,6 +88,7 @@
           }
 //check of schrijven naar de DB is gelukt
           if ($result && $result1 && $result2 && $result3 && $result4){
+              $factuurcode_versleuteld = password_hash($factuurcode, PASSWORD_BCRYPT);
 //bevestigings mail sturen
             $to = $email;
             $subject = "Bestelling";
@@ -104,9 +105,9 @@
                     <img src='' width='250' height='75' alt='Utrechtse Fietsenwinkel'>
                 </li>
             </ul>
-            <h1>U bestelling is geslaagt!</h1>
-            <a href='http://www.utrechtsefietsenwinkel.nl/factuur?id=" . $factuurcode . "'>Factuur</a>
-            <p>bedankt voor uw aankoop we zien u graag nog vaker terug</p>
+            <h1>U bestelling is geslaagd!</h1>
+            <a href='http://www.utrechtsefietsenwinkel.nl/factuur?id=" . $factuurcode . "&idv=" . $factuurcode_versleuteld . "'>Factuur</a>
+            
             </body>
             </html>";
             $headers = "MIME-Version: 1.0". "\r\n";
