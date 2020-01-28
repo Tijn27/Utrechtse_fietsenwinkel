@@ -33,7 +33,9 @@
           <label for="oplaatTijd">Plaats</label>
           <input type="text" class="form-control" id="plaats" name="plaats"required>
         </div>
-      <button type="submit" name="submit" class="btn btn-primary">Bestellen</button>
+        <div class='text-center'>
+      <button type="submit" name="submit" class="btn btn-primary">Betalen</button>
+      </div>
     </form>
   </div>
   <div class='col' style='min-width: 300px;'>

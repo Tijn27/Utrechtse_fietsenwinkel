@@ -13,12 +13,12 @@
         <a class="nav-link dropdown-toggle" id="active_producten" data-toggle="dropdown" href="index.php?content=Producten" role="button" aria-haspopup="true" aria-expanded="false">Producten</a>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="index.php?content=Producten">Alle bekijken</a>
-          <a class="dropdown-item" href="index.php?content=ProductenElektrisch">Elektrische fietsen</a>
-          <a class="dropdown-item" href="index.php?content=ProductenStad">Stadsfietsen</a>
-          <a class="dropdown-item" href="index.php?content=ProductenSport">Sportieve fietsen</a>
+          <a class="dropdown-item" href="index.php?content=Producten&type=1">Elektrische fietsen</a>
+          <a class="dropdown-item" href="index.php?content=Producten&type=3">Stadsfietsen</a>
+          <a class="dropdown-item" href="index.php?content=Producten&type=2">Sportieve fietsen</a>
 
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="index.php?content=ProductenAccessoires">Accessoires</a>
+          <a class="dropdown-item" href="index.php?content=Producten&type=4">Accessoires</a>
         </div>
       </li>
       &nbsp;

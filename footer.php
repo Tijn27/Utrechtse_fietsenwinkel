@@ -7,10 +7,10 @@
             <div class='row'>
                 <div class='col'>
                     <a href='index.php?content=Producten' id='text_footer'>Producten:</a><br>
-                    <a href='index.php?content=ProductenElektrisch' id='text_footer_small'>Elektrische fietsen</a><br>
-                    <a href='index.php?content=ProductenStad' id='text_footer_small'>Stadsfietsen</a><br>
-                    <a href='index.php?content=ProductenSport' id='text_footer_small'>Sportieve fietsen</a><br>
-                    <a href='index.php?content=ProductenAccessoires' id='text_footer_small'>Accessoires</a><br>
+                    <a href='index.php?content=Producten&type=1' id='text_footer_small'>Elektrische fietsen</a><br>
+                    <a href='index.php?content=Producten&type=3' id='text_footer_small'>Stadsfietsen</a><br>
+                    <a href='index.php?content=Producten&type=2' id='text_footer_small'>Sportieve fietsen</a><br>
+                    <a href='index.php?content=Producten&type=4' id='text_footer_small'>Accessoires</a><br>
                 </div>
                 <div class='col'>
                     <a href='index.php?content=Contact' id='text_footer'>Contact:</a><br>

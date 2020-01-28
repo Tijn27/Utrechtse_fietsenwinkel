@@ -8,6 +8,11 @@
 </div>
 <div class="row">
   <div class="col">
+    <!-- <h1>ja</h1>
+    <a style='position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;' href="index.php?content=Proefrit"><img id="home_img" src="./img/proefrit.jfif" alt="Maak een proefrit"></a> -->
     <a id="home_img" href="index.php?content=Proefrit" style="background-image: url('./img/proefrit.jfif'); background-size: cover;"></a>
   </div>
   <div  class="col">
