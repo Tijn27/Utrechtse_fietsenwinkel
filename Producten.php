@@ -36,7 +36,7 @@ if ($result->num_rows > 0) {
         echo "<form action='index.php?content=product' method='get' id='produckt' class='card' class='col' style='width: 18rem;'>
         <img src='./img/webshop/" . $IdFiets . "/" . $rowId["afbeeldingUrl"] . "' class='card-img-top' alt='afbeelding fiets'>
         <div class='card-body'>
-            <h5 class='card-title'>" . $row["productNaam"] . "</h5>
+            <h5 id='productTitel' class='card-title'>" . $row["productNaam"] . "</h5>
             <p class='card-text'> ";
                                     if(!$row['TypeFiets_TypeFietsId'] == NULL){
                                         echo "<li>Type: " . $rowType["TypeFiets"] . "</li>";

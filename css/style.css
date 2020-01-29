@@ -30,6 +30,10 @@ body{
     border-color: white;
 }
 
+#productTitel{
+    color: #417ab7;
+}
+
 #center{
     display: table;
   margin: 0 auto;
@@ -48,6 +52,13 @@ footer{
     margin-top: 20px;
     height: auto;
     background-color: black;
+}
+
+#border{
+    border-top: 1px solid rgb(184, 184, 187);
+    padding-top: 8px;
+    margin-bottom: 8px;
+    font-size: 18px;
 }
 
 #footer_title{

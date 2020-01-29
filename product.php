@@ -13,24 +13,20 @@
         if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
-                //type ophalen
-                if($row["TypeFiets_TypeFietsId"] == 1){
-                    $typeFiets = "Elektrische fiets";
-                }else if($row["TypeFiets_TypeFietsId"] == 2){
-                    $typeFiets = "Sport fiets";
-                }else if($row["TypeFiets_TypeFietsId"] == 3){
-                    $typeFiets = "Stads fiets";
-                }else{
-                    $typeFiets = "Overig";
-                }
                 //url afbeelding ophalen uit de database
                 $IdFiets = $row["productCode"];
                 $sql = "SELECT afbeeldingUrl FROM afbeelding WHERE IdFiets = $IdFiets";
                 $resultId = $conn->query($sql);
                 $rowId = $resultId->fetch_assoc();
+
+                //type fiets ophalen uit de type tabel
+                $typeFietsId = $row['TypeFiets_TypeFietsId'];
+                $sql = "SELECT TypeFiets FROM `typefiets` WHERE $typeFietsId = TypeFietsId";
+                $resultType = $conn->query($sql);
+                $rowType = $resultType->fetch_assoc();
                 //paginainhoud
                 echo "<div class='row' style='background-color: white;'>
-                <div class='col'>
+                <div style='min-width: 250px;' class='col'>
                     <div style='max-width: 100%;'>
                         <img src='./img/webshop/" . $IdFiets . "/" . $rowId["afbeeldingUrl"] . "' class='card-img-top' alt='afbeelding fiets'>
                     </div>
@@ -38,17 +34,37 @@
                 <div class='col'>
                     <div style='width: 100%;'>
                         <form action='./index.php?content=./fuctions/bestelling_script' method='post' class='card-body'>
-                            <h5 class='card-title'>" . $row["productNaam"] . "</h5>
+                            <h5 id='productTitel' class='card-title'>" . $row["productNaam"] . "</h5>
                             <p class='card-text'>Merk: " . $row["merk"] . "</p>
-                            <p class='card-text'>Type: " . $typeFiets . "</p>
-                            <h5 class='card-title'>€ " . $row["kosten"] . "</h5>
+                            <p class='card-text'>Type: " . $rowType["TypeFiets"] . "</p>
+                            <h5 class='card-title'>€ " . number_format($row["kosten"],2,',','.') . "</h5>
                             <button formaction='./index.php?content=Proefrit' style='background-color:#67ca67;border-color: #67ca67;' class='btn btn-primary'>Maak een proefrit</button><br><br>
                             <button type='submit' name='naam' value='$IdFiets' style='background-color:#5cc3ce;border-color: #5cc3ce;' class='btn btn-primary'>Plaats in bestelling</button>
-                            <hr>
-                        </div>
-                    </div>
+                        </form>
+                    </div>              
                 </div>
-              </div>";
+            </div>
+            <br>    
+            <div class='row' style='background-color: white;'>
+                <div class='col'><br>
+                     <h5 id='productTitel' class='card-title'>Specificaties " . $row["productNaam"] . "</h5>";
+                     if(!$row["productNaam"] == NULL){echo"<div class='row' id='border'><a class='col'>Productnaam: </a><a class='col'>" . $row["productNaam"] . "</a></div>";}
+                     if(!$row["merk"] == NULL){echo"<div class='row' id='border'><a class='col'>Merk: </a><a class='col'>" . $row["merk"] . "</a></div>";}
+                     if(!$row["serie"] == NULL){echo"<div class='row' id='border'><a class='col'>Serie: </a><a class='col'>" . $row["serie"] . "</a></div>";}
+                     if(!$rowType["TypeFiets"] == NULL){echo"<div class='row' id='border'><a class='col'>Type: </a><a class='col'>" . $rowType["TypeFiets"] . "</a></div>";}
+                     if(!$row["versnellingen"] == NULL){echo"<div class='row' id='border'><a class='col'>Versnellingen: </a><a class='col'>" . $row["versnellingen"] . "</a></div>";}
+                     if(!$row["frameType"] == NULL){echo"<div class='row' id='border'><a class='col'>Frametype: </a><a class='col'>" . $row["frameType"] . "</a></div>";}
+                     if(!$row["Garantie"] == NULL){echo"<div class='row' id='border'><a class='col'>Garantie: </a><a class='col'>" . $row["Garantie"] . " jaar</a></div>";}
+                     
+                     if((!$row["accuPositie"] == NULL || !$row["oplaatTijd"] == NULL) || !$row["capaciteitAccu"] == NULL){
+                        echo "<br><br><h5 id='productTitel' class='card-title'>E-bike techniek</h5>";
+                        if(!$row["accuPositie"] == NULL){echo"<div class='row' id='border'><a class='col'>Accu positie: </a><a class='col'>" . $row["accuPositie"] . "</a></div>";}
+                        if(!$row["oplaatTijd"] == NULL){echo"<div class='row' id='border'><a class='col'>Oplaat tijd: </a><a class='col'>" . $row["oplaatTijd"] . "</a></div>";}
+                        if(!$row["capaciteitAccu"] == NULL){echo"<div class='row' id='border'><a class='col'>Capiciteit van de accu: </a><a class='col'>" . $row["capaciteitAccu"] . "Wh</a></div>";}
+                     }
+                echo"</div>
+            </div>
+              ";
             }
         } else {
             echo "Geen informaie over dit produckt gevonden";
