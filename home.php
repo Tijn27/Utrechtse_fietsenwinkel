@@ -1,22 +1,21 @@
 <div class="row">
   <div class="col">
-    <a id="home_img" href="index.php?content=Producten" style="background-image: url('./img/kopen.png'); background-size: cover;"></a>
+    <a id="home-card" href="index.php?content=Producten">Koop de fiets van u dromen</a>
+    <a id="home_img" href="index.php?content=Producten" style="background-image: url('./img/kopen.png'), url('./img/gradient.png'); background-size: cover;"></a>
   </div>
-  <div class="col">
-    <a id="home_img" href="index.php?content=Reparatie" style="background-image: url('./img/fietsenmaker.jfif'); background-size: cover;"></a>
+  <div class="col">  
+    <a id="home-card" href="index.php?content=Producten">Plan een reparatie in</a>
+    <a id="home_img" href="index.php?content=Reparatie" style="background-image:  url('./img/gradient.png'), url('./img/fietsenmaker.jfif'); background-size: cover;"></a>
   </div>
 </div>
 <div class="row">
   <div class="col">
-    <!-- <h1>ja</h1>
-    <a style='position: absolute;
-  left: 0px;
-  top: 0px;
-  z-index: -1;' href="index.php?content=Proefrit"><img id="home_img" src="./img/proefrit.jfif" alt="Maak een proefrit"></a> -->
-    <a id="home_img" href="index.php?content=Proefrit" style="background-image: url('./img/proefrit.jfif'); background-size: cover;"></a>
+    <a id="home-card" href="index.php?content=Producten">Maak een proefrit</a>
+    <a id="home_img" href="index.php?content=Proefrit" style="background-image:  url('./img/gradient.png'), url('./img/proefrit.jfif'); background-size: cover;"></a>
   </div>
   <div  class="col">
-  <a id="home_img" href="index.php?content=Contact" style="background-image: url('./img/locatie.PNG'); background-size: cover;"></a>
+    <a id="home-card" href="index.php?content=Producten">Contact</a>
+  <a id="home_img" href="index.php?content=Contact" style="background-image: url('./img/gradient.png') , url('./img/locatie.png'); background-size: cover;"></a>
   </div>
 </div>
 

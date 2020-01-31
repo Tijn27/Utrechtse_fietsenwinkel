@@ -1,16 +1,45 @@
-<?php 
-    $gebruikersrol = [2];
-    
-    include("connect_db.php");
-    include("functions.php");
-    include("./securety.php");
+<?php
+$gebruikersrol = [2];
 
-    //productcode genereren
-    $sql = "SELECT MAX(productcode) AS maxProductcode FROM product";
-    $result = $conn->query($sql);
-    $row = $result->fetch_assoc();
-    $productcode = $row["maxProductcode"] + 1;
+include("connect_db.php");
+include("functions.php");
+include("./securety.php");
 
+$productId = $_POST["productcode"];
+
+if($_FILES['afbeelding']['size'] > 0){
+    if(file_exists('./img/webshop/' . $productId . '')){
+        //verwijderen foto's
+        $files = glob('./img/webshop/' . $productId . '/*'); // get all file names
+        foreach($files as $file){ // iterate files
+        if(is_file($file))
+            unlink($file); // delete file
+        }
+        rmdir('./img/webshop/' . $productId . '');
+    }
+    $nieuweAfbeelding = true;
+}else{
+    $sql = "SELECT * FROM afbeelding WHERE IdFiets = $productId";
+    $resultImg = $conn->query($sql);
+    $rowImg = $resultImg->fetch_assoc();
+
+    $idAfbeelding = $rowImg['idafbeelding'];
+    $idFiets = $rowImg['IdFiets'];
+    $oudeAfbeeldingUrl = $rowImg['afbeeldingUrl'];
+    $nieuweAfbeelding = false;
+}
+
+
+//verwijderen uit de database
+$sql = "DELETE FROM `product` WHERE `product`.`productCode` = '$productId'";
+if ($conn->query($sql) === TRUE) {
+    $deleteSuccess = true;
+} else {
+    $deleteSuccess = false;
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+if($deleteSuccess){
     //gegevens ophalen uit form
     $naam = sanitize($_POST["naam"]);
     $prijs = sanitize($_POST["prijs"]);
@@ -27,7 +56,7 @@
     //check of alles is ingevuld
     if (empty($_POST["naam"]) || empty($_POST["prijs"]) || empty($_POST["merk"])) {
         echo '<br><div class="alert alert-warning" role="alert">U heeft niet alle vereise gegevens ingevuld</div>';
-        header("Refresh: 5; url=./index.php?content=toevoegen");
+        header("Refresh: 5; url=./index.php?content=producten");
       } else {
     //database vullen
         $sql = "INSERT INTO `product` ( `productCode`, 
@@ -42,7 +71,7 @@
                                         `oplaatTijd`, 
                                         `capaciteitAccu`, 
                                         `TypeFiets_TypeFietsId`)
-                VALUES                 ('$productcode', 
+                VALUES                 ('$productId', 
                                         '$naam', 
                                         '$prijs', 
                                         '$merk', 
@@ -59,7 +88,7 @@
         $id = mysqli_insert_id($conn);
 
     //afbeelding toevoegen
-    if(isset($_POST['submit'])){
+    if($nieuweAfbeelding){
       $afbeelding = $_FILES['afbeelding'];
 
       $fileName = $_FILES['afbeelding']['name'];
@@ -76,12 +105,12 @@
       if(in_array($fileActualExt, $allowed)){
         if($fileError === 0) {
           if ($fileSize < 1000000){
-            mkdir("img/webshop/" . $productcode);
+            mkdir("img/webshop/" . $productId);
             $fileNameNew = $_POST["naam"] . "." . $fileActualExt;
-            $fileDestination = 'img/webshop/' . $productcode . '/' . $fileNameNew;
+            $fileDestination = 'img/webshop/' . $productId . '/' . $fileNameNew;
             move_uploaded_file($fileTmpName, $fileDestination);
 
-            $sql = "INSERT INTO `afbeelding` (`idafbeelding`, `IdFiets`, `afbeeldingUrl`) VALUES (NULL, '$productcode', '$fileNameNew')";
+            $sql = "INSERT INTO `afbeelding` (`idafbeelding`, `IdFiets`, `afbeeldingUrl`) VALUES (NULL, '$productId', '$fileNameNew')";
             $result = mysqli_query($conn, $sql);
             $id = mysqli_insert_id($conn);
           }else{
@@ -93,15 +122,23 @@
       } else{
         echo "Je kan geen afbeeldingen van dit type uploaden";
       }
+    }else{
+        $sql = "INSERT INTO `afbeelding` (`idafbeelding`, `IdFiets`, `afbeeldingUrl`) VALUES ($idAfbeelding, '$idFiets', '$oudeAfbeeldingUrl')";
+        $result = mysqli_query($conn, $sql);
+        $id = mysqli_insert_id($conn);
     }
 
         //melingen
         if ($result){
-            echo '<br><div class="alert alert-success" role="alert">Het nieuwe product is succesvol toegevoegd</div>';
-            header("Refresh: 5; url=./index.php?content=producten");
+            echo '<br><div class="alert alert-success" role="alert">Het product is succesvol bewerkt</div>';
+            header("Refresh: 3; url=./index.php?content=producten");
           } else {
             echo '<br><div class="alert alert-danger" role="alert">Er is iets misgegaan, probeer het nogmaals</div>';
-            header("Refresh: 10; url=./index.php?content=toevoegen");
+            header("Refresh: 10; url=./index.php?content=producten");
           }
       }
+    }else{
+    echo '<br><div class="alert alert-danger" role="alert">Er is iets misgegaan, probeer het nogmaals</div>';
+    header("Refresh: 10; url=./index.php?content=producten");
+}
 ?>
