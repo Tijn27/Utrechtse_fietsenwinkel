@@ -14,9 +14,9 @@
                 </div>
                 <div style='margin-top: 10px; min-width: 200px;' class='col'>
                     <a href='index.php?content=Contact' id='text_footer'>Contact:</a><br>
-                    <img src='./img/icon/phone-xxl.png' height="20" width="20"><a id='text_footer_small'>030 281 5100</a><br>
+                    <img src='./img/icon/phone-xxl.png' height="20" width="20"><a id='text_footer_small'>030-87654321 </a><br>
                     <img src='./img/icon/mail-xxl.png' height="20" width="20"><a id='text_footer_small'>contact@utrechtsefietsenwinkel.nl</a><br>
-                    <img src='./img/icon/define-location-xxl.png' height="20" width="20"><a id='text_footer_small'>Columbuslaan 540, 3526 EP Utrecht</a><br>
+                    <img src='./img/icon/define-location-xxl.png' height="20" width="20"><a id='text_footer_small'>Velostraat 1 Utrecht</a><br>
                 </div>
                 <div style='margin-top: 10px;  min-width: 200px;' class='col'>
                     <a id='text_footer'>Service:</a><br>

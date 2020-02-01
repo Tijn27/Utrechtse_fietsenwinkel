@@ -28,7 +28,7 @@
 <body>
     <main>
         <div class="container" id="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2452.8311888935064!2d5.100116815776795!3d52.06459737973053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c665949a3fef4d%3A0xca011327d5e9ac9e!2sMBO+Utrecht+-+Academie+voor+Economie+en+Ondernemen!5e0!3m2!1snl!2snl!4v1540981910149" frameborder="0" style="border:0" id="iframe" allowfullscreen width="100%" height="450 px"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3516.584442167103!2d5.102596013761277!3d52.09882627191323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c66f6c41902ecf%3A0x724b28485daa27de!2sVeldstraat%201%2C%203551%20SG%20Utrecht!5e0!3m2!1snl!2snl!4v1580566811907!5m2!1snl!2snl" frameborder="0" style="border:0" id="iframe" allowfullscreen width="100%" height="450 px"></iframe>
         </div>
         <br>
         <br>
@@ -38,7 +38,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title"><b>Adres</b></h5>
-                            <p class="card-text">Columbuslaan 540, 3526 EP Utrecht.</p>
+                            <p class="card-text"><img src='./img/icon/pin.png' height="20" width="20"> Velostraat 1 Utrecht</p>
                             <p class="card-text"><small class="text-muted"></small></p>
                         </div>
                     </div>
@@ -46,8 +46,8 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title"><b>Email</b></h5>
-                            <p class="card-text">info@mboutrecht.nl</p>
+                            <h5 class="card-title"><b>E-mail</b></h5>
+                            <p class="card-text"><img src='./img/icon/email.png' height="20" width="20"> info@utrechtsefietsenwinkel.nl</p>
                             <p class="card-text"><small class="text-muted"></small></p>
                         </div>
                     </div>
@@ -56,8 +56,8 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title"><b>Telefoon</b></h5>
-                            <p class="card-text">030 281 5100</p>
-                            <p class="card-text"><small class="text-muted"></small></p>
+                            <p class="card-text"><img src='./img/icon/phone.png' height="20" width="20"> 030-87654321</p>
+                            <p class="card-text"><img src='./img/icon/smartphone.png' height="20" width="20"> 06-12345678</p>
                         </div>
                     </div>
                 </div>
