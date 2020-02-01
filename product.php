@@ -10,6 +10,7 @@
         $sql = "SELECT * FROM product where productNaam = '$naam'";
         $result = $conn->query($sql);
 
+        
         if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
@@ -25,6 +26,13 @@
                 $resultType = $conn->query($sql);
                 $rowType = $resultType->fetch_assoc();
                 //paginainhoud
+
+                if($row['actief'] == false){
+                    echo "  <div class='row'>
+                                <div class='col alert alert-danger' role='alert'>Dit product is helaas niet meer beschikbaar</div>
+                            </div>";
+                }
+
                 echo "<div class='row' style='background-color: white;'>
                 <div style='min-width: 250px;' class='col'>
                     <div style='max-width: 100%;'>
@@ -38,8 +46,8 @@
                             <p class='card-text'>Merk: " . $row["merk"] . "</p>
                             <p class='card-text'>Type: " . $rowType["TypeFiets"] . "</p>
                             <h5 class='card-title'>€ " . number_format($row["kosten"],2,',','.') . "</h5>
-                            <button formaction='./index.php?content=Proefrit' style='background-color:#67ca67;border-color: #67ca67;' class='btn btn-primary'>Maak een proefrit</button><br><br>
-                            <button type='submit' name='naam' value='$IdFiets' style='background-color:#5cc3ce;border-color: #5cc3ce;' class='btn btn-primary'>Plaats in bestelling</button>
+                            <button formaction='./index.php?content=Proefrit' style='background-color:#67ca67;border-color: #67ca67;' class='btn btn-primary'"; if($row['actief'] == false){echo "disabled";} echo">Maak een proefrit</button><br><br>
+                            <button type='submit' name='naam' value='$IdFiets' style='background-color:#5cc3ce;border-color: #5cc3ce;' class='btn btn-primary'"; if($row['actief'] == false){echo "disabled";} echo">Plaats in bestelling</button>
                         </form>
                     </div>              
                 </div>

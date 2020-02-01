@@ -9,12 +9,13 @@
 <?php 
 require_once("./fuctions/connect_db.php");
 
+//chect of het type product in de url woord aangegeven
 if(isset($_GET['type'])){
     $typeFiets = $_GET['type'];
-    $sql = "SELECT * FROM product WHERE TypeFiets_TypeFietsId = $typeFiets";
+    $sql = "SELECT * FROM product WHERE actief = true AND TypeFiets_TypeFietsId = $typeFiets";
     $result = $conn->query($sql);
 }else{
-    $sql = "SELECT * FROM product";
+    $sql = "SELECT * FROM product WHERE actief = true";
     $result = $conn->query($sql);
 }
 

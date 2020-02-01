@@ -17,64 +17,65 @@ $result = $conn->query($sql);
 
 if($result->num_rows > 0){
   while($row = $result->fetch_assoc()){
-    echo "
+    echo"
     <form action='./index.php?content=./fuctions/bewerken_script' method='post' enctype='multipart/form-data'>
       <div class='form-row' >
         <div class='form-group col-md-6'>
-          <label for='afbeeldign'>Oude afbeelding: " . $rowImg['afbeeldingUrl'] . "<br> Klik hieronder om een nieuwe afbeelding te selecteren</label>
+          <label for='afbeeldign'>Klik hieronder om een nieuwe afbeelding te selecteren, als u de oude afbeeling wilt blijven gebruiken hoeft u hier niks te doen</label>
           <input type='file' name='afbeelding'>
         </div>
-        <input type='hidden' name='productcode' value=" . $row['productCode'] . ">
+        <input type='hidden' name='productcode' value=" . $row['productCode'] .">";?>
         <div class='form-group col-md-6'>
           <label for='naam'>Naam</label>
-          <input type='text' "; if(!$row['productNaam'] == NULL){ echo "value=" . $row['productNaam'] . "";}echo " class='form-control' id='naam' name='naam' required>
+          <input type='text' class='form-control' value="<?php echo (isset($row["productNaam"]) ? htmlspecialchars($row["productNaam"]) : ''); ?>" id='naam' name='naam' required>
         </div>
       </div>
       <div class='form-row'>
         <div class='form-group col-md-6'>
           <label for='prijs'>Prijs</label>
-          <input type='text' "; if(!$row['kosten'] == NULL){ echo "value=" . $row['kosten'] . "";}echo " class='form-control' id='prijs' name='prijs' required>
+          <input type='text' value="<?php echo (isset($row["kosten"]) ? htmlspecialchars($row["kosten"]) : ''); ?>" class='form-control' id='prijs' name='prijs' required>
         </div>
         <div class='form-group col-md-6'>
           <label for='merk'>merk</label>
-          <input type='text' "; if(!$row['merk'] == NULL){ echo "value=" . $row['merk'] . "";}echo " class='form-control' id='merk' name='merk' required>
+          <input type='text' value="<?php echo (isset($row["merk"]) ? htmlspecialchars($row["merk"]) : ''); ?>" class='form-control' id='merk' name='merk' required>
         </div>
       </div>
       <div class='form-row'>
         <div class='form-group col-md-6'>
           <label for='serie'>serie</label>
-          <input type='text' "; if(!$row['serie'] == NULL){ echo "value=" . $row['serie'] . "";}echo " class='form-control' id='serie' name='serie'>
+          <input type='text' value="<?php echo (isset($row["serie"]) ? htmlspecialchars($row["serie"]) : ''); ?>" class='form-control' id='serie' name='serie'>
         </div>
         <div class='form-group col-md-6'>
           <label for='versnellingen'>aantal versnellingen</label>
-          <input type='text' "; if(!$row['versnellingen'] == NULL){ echo "value=" . $row['versnellingen'] . "";}echo " class='form-control' id='versnellingen' name='versnellingen'>
+          <input type='text' value="<?php echo (isset($row["versnellingen"]) ? htmlspecialchars($row["versnellingen"]) : ''); ?>" class='form-control' id='versnellingen' name='versnellingen'>
         </div>
       </div>
       <div class='form-row'>
         <div class='form-group col-md-6'>
           <label for='frametype'>Frametype</label>
-          <input type='text' "; if(!$row['frameType'] == NULL){ echo "value=" . $row['frameType'] . "";}echo " class='form-control' id='frametype' name='frametype'>
+          <input type='text' value="<?php echo (isset($row["frameType"]) ? htmlspecialchars($row["frameType"]) : ''); ?>" class='form-control' id='frametype' name='frametype'>
         </div>
         <div class='form-group col-md-6'>
           <label for='garantie'>Garantie in jaren</label>
-          <input type='text' "; if(!$row['Garantie'] == NULL){ echo "value=" . $row['Garantie'] . "";}echo " class='form-control' id='garantie' name='garantie'>
+          <input type='text' value="<?php echo (isset($row["Garantie"]) ? htmlspecialchars($row["Garantie"]) : ''); ?>" class='form-control' id='garantie' name='garantie'>
         </div>
       </div>
       <div class='form-row'>
         <div class='form-group col-md-6'>
           <label for='accuPositie'>Accu positie</label>
-          <input type='text' "; if(!$row['accuPositie'] == NULL){ echo "value=" . $row['accuPositie'] . "";}echo " class='form-control' id='accuPositie' name='accuPositie'>
+          <input type='text' value="<?php echo (isset($row["accuPositie"]) ? htmlspecialchars($row["accuPositie"]) : ''); ?>" class='form-control' id='accuPositie' name='accuPositie'>
         </div>
         <div class='form-group col-md-6'>
           <label for='oplaatTijd'>Oplaat tijd</label>
-          <input type='text' "; if(!$row['oplaatTijd'] == NULL){ echo "value=" . $row['oplaatTijd'] . "";}echo " class='form-control' id='oplaatTijd' name='oplaatTijd'>
+          <input type='text' value="<?php echo (isset($row["oplaatTijd"]) ? htmlspecialchars($row["oplaatTijd"]) : ''); ?>" class='form-control' id='oplaatTijd' name='oplaatTijd'>
         </div>
       </div>
       <div class='form-row'>
         <div class='form-group col-md-6'>
           <label for='capacitijdAccu'>Capacitijd accu (Wh)</label>
-          <input type='text'  "; if(!$row['capaciteitAccu'] == NULL){ echo "value=" . $row['capaciteitAccu'] . "";}echo " class='form-control' id='capacitijdAccu' name='capacitijdAccu'>
+          <input type='text'  value="<?php echo (isset($row["capaciteitAccu"]) ? htmlspecialchars($row["capaciteitAccu"]) : ''); ?>" class='form-control' id='capacitijdAccu' name='capacitijdAccu'>
         </div>
+        <?php echo"
         <div class='form-group col-md-6'>
             <label for='type'>Type product</label>
             <select class='form-control' name='typeFiets'>
@@ -93,3 +94,4 @@ if($result->num_rows > 0){
 }
 
 ?>
+ <!-- "; if(!$row['productNaam'] == NULL){ echo "value=" . $row['productNaam'] . "";}echo " -->
