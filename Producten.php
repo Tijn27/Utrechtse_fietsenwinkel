@@ -34,7 +34,7 @@ if ($result->num_rows > 0) {
         $rowType = $resultType->fetch_assoc();
         
         //card printen
-        echo "<form action='index.php?content=product' method='get' id='produckt' class='card' class='col' style='width: 18rem;'>
+        echo "<form action='index.php?content=product' method='get' id='produckt' class='card ' style='width: 20rem;'>
         <img src='./img/webshop/" . $IdFiets . "/" . $rowId["afbeeldingUrl"] . "' class='card-img-top' alt='afbeelding fiets'>
         <div class='card-body'>
             <h5 id='productTitel' class='card-title'>" . $row["productNaam"] . "</h5>

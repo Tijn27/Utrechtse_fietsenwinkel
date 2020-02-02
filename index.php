@@ -23,12 +23,10 @@ session_start();
   <body>
 <!-- navbar -->
 <?php include("./navbar.php");?>
-    <main class="container">
-      <!-- pagina -->
-      <div class="row">
-        <div id='main' class="col-12"><br><?php include("./pageloader.php"); ?></div>
-      </div>
-    </main>
+<!-- pagina -->
+<?php include("./pageloader.php"); ?>
+
+    
     <!-- footer -->
     <?php include("./footer.php");?>
 

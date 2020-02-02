@@ -40,7 +40,7 @@
   </div>
   <div class='col' style='min-width: 300px;'>
   <!-- Bestelling overzicht -->
-  <h2 style='text-align: center;'>bestelling</h2><br>
+  <h2 style='text-align: center;' class="display-4">bestelling</h2><br>
     <?php
     require_once("./fuctions/connect_db.php");
 

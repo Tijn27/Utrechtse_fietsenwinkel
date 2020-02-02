@@ -4,7 +4,7 @@
     }
 </style>
 
-<h1>bestelling:</h1><br>
+<h1 class="display-4">bestelling:</h1><br>
 <?php
 require_once("./fuctions/connect_db.php");
 
