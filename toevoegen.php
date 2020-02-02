@@ -1,4 +1,10 @@
-<h1>Product toevoegen:</h1>
+<style>
+    #active_toevoegen{
+        color: white;
+    }
+</style>
+
+<h1 class="display-4">Product toevoegen:</h1><br>
 <form action='./index.php?content=./fuctions/toevoegen_script' method='post' enctype='multipart/form-data'>
   <div class='form-row' >
     <div class='form-group col-md-6'>

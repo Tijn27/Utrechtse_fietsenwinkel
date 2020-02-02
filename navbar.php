@@ -39,10 +39,10 @@
               switch ($_SESSION["gebruikersrol"]) {
                 case 2:
                   echo '<li class="nav-item">
-                    <a id="active_berichten" class="nav-link" href="index.php?content=beheren">Beheren</a>
+                    <a id="active_beheren" class="nav-link" href="index.php?content=beheren">Beheren</a>
                   </li>
                   <li class="nav-item">
-                    <a id="active_berichten" class="nav-link" href="index.php?content=toevoegen">Toevoegen</a>
+                    <a id="active_toevoegen" class="nav-link" href="index.php?content=toevoegen">Toevoegen</a>
                   </li>';
                 break;
                 case 1:
@@ -59,7 +59,7 @@
             }elseif($_COOKIE['winkelwagen'] == '[]'){
             }else{
               echo '<li class="nav-item">
-                      <a id="active_bestellingen" class="nav-link" href="index.php?content=bestelling">bestelling</a>
+                      <a id="active_bestelling" class="nav-link" href="index.php?content=bestelling">bestelling</a>
                     </li>';
             }
           ?>

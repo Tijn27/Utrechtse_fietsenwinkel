@@ -41,8 +41,8 @@
                           <title>nieuwe registratie</title>
                         </head>
                         <body>
-                          <h2>Er is een nieuw account aan gemaakt:</h2>
-                          <p>gebruikersnaam: $email</p>
+                          <h2>Nieuw account:</h2>
+                          <p>Er is een nieuw account aangemaakt met de gebruikersnaam: $email</p>
                           <p>Als u dit account niet heeft aangemaak kunt uw deze blokeren door op de onderstaande link te klikken</p>
                           <a href='http://www.utrechtsefietsenwinkel.nl/index.php?content=gebruikers'>Beheer gebruikers</a>
                           <p></p>

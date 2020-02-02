@@ -1,3 +1,9 @@
+<style>
+    #active_bestelling{
+        color: white;
+    }
+</style>
+
 <h1>bestelling:</h1><br>
 <?php
 require_once("./fuctions/connect_db.php");

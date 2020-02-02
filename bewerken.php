@@ -1,3 +1,11 @@
+<style>
+    #active_beheren{
+        color: white;
+    }
+</style>
+
+<h1 class="display-4">Product bewerken:</h1><br>
+
 <?php
 $gebruikersrol = [2];
 
