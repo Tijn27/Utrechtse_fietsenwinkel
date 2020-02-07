@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col">
-    <a id="home-card" href="index.php?content=Producten">Koop de fiets van u dromen</a>
+    <a id="home-card" href="index.php?content=Producten">Koop de fiets van uw dromen</a>
     <a id="home_img" href="index.php?content=Producten" style="background-image: url('./img/kopen.png'), url('./img/gradient.png'); background-size: cover;"></a>
   </div>
   <div class="col">  
@@ -27,35 +27,27 @@
         <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
         <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-        <li date-target="#carouselExampleCaptions" data-slide-to="3"></li>
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="./img/fietsen voor edit/foto1.jpg" alt="..."style="height:350px; width:1075px">
           <div class="carousel-caption d-none d-md-block" style="color:white;">
-            <h5>slide 1</h5>
-            <p>deze carousel is gemaakt door mac.</p>
+            <h5 style='text-shadow: 1px 1px black;'>Utrechtse fietsenwinkel</h5>
+            <p style='text-shadow: 1px 1px black;'>De fietsenwinkel van Utrecht</p>
           </div>
         </div>
         <div class="carousel-item">
           <img src="./img/stella.jpg" alt="..." style="height:350px; width:1075px">
           <div class="carousel-caption d-none d-md-block" style="color:white;">
-            <h5>slide 2</h5>
-            <p>hij had hulp van zijn neef.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="./img/fietsen voor edit/foto2.jpg" alt="..."style="height:350px; width:1075px">
-          <div class="carousel-caption d-none d-md-block" style="color:white;">
-            <h5>slide 3</h5>
-            <p>die neef is ook een matie.</p>
+            <h5 style='text-shadow: 1px 1px black;'>Koop hier de beste e-bikes</h5>
+            <!-- <p>hij had hulp van zijn neef.</p> -->
           </div>
         </div>
         <div class="carousel-item">
           <img src="./img/fietsen voor edit/foto3.jpg" alt="..." style="height:350px; width:1075px">
           <div class="carousel-caption d-none d-md-block" style="color:white;">
-            <h5>slide 4</h5>
-            <p>die matie is een klasgenoot.</p>
+            <h5 style='text-shadow: 1px 1px black;'>Ook de mooise sportfietsen kunt u hier vinden</h5>
+            <!-- <p>die matie is een klasgenoot.</p> -->
           </div>
         </div>
       </div>

@@ -22,17 +22,17 @@
       <input type='text' class='form-control' id='prijs' name='prijs' required>
     </div>
     <div class='form-group col-md-6'>
-      <label for='merk'>merk</label>
+      <label for='merk'>Merk</label>
       <input type='text' class='form-control' id='merk' name='merk' required>
     </div>
   </div>
   <div class='form-row'>
     <div class='form-group col-md-6'>
-      <label for='serie'>serie</label>
+      <label for='serie'>Serie</label>
       <input type='text' class='form-control' id='serie' name='serie'>
     </div>
     <div class='form-group col-md-6'>
-      <label for='versnellingen'>aantal versnellingen</label>
+      <label for='versnellingen'>Aantal versnellingen</label>
       <input type='text' class='form-control' id='versnellingen' name='versnellingen'>
     </div>
   </div>
@@ -48,17 +48,17 @@
   </div>
   <div class='form-row'>
     <div class='form-group col-md-6'>
-      <label for='accuPositie'>Accu positie</label>
+      <label for='accuPositie'>Accupositie</label>
       <input type='text' class='form-control' id='accuPositie' name='accuPositie'>
     </div>
     <div class='form-group col-md-6'>
-      <label for='oplaatTijd'>Oplaat tijd</label>
+      <label for='oplaatTijd'>Oplaadtijd</label>
       <input type='text' class='form-control' id='oplaatTijd' name='oplaatTijd'>
     </div>
   </div>
   <div class='form-row'>
     <div class='form-group col-md-6'>
-      <label for='capacitijdAccu'>Capacitijd accu (Wh)</label>
+      <label for='capacitijdAccu'>Capaciteit accu (Wh)</label>
       <input type='text' class='form-control' id='capacitijdAccu' name='capacitijdAccu'>
     </div>
     <div class='form-group col-md-6'>

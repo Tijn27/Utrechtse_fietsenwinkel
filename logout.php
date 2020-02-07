@@ -11,7 +11,7 @@
 
     session_destroy();
 
-    echo '<br><div class="alert alert-success" role="alert">U bent sucsessvol uitgelogd</div>';
+    echo '<br><div class="alert alert-success" role="alert">U bent succesvol uitgelogd</div>';
     header("Refresh: 2; url=./index.php?content=login");
     exit();
 ?>

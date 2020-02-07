@@ -30,11 +30,11 @@
             $_SESSION["gebruikersrol"] = $record["gebruikersrol"];
             switch ($record["gebruikersrol"]){
                 case 1:
-                    echo '<div class="alert alert-success" role="alert">Uw bent ingelogd en word nu doorgestuurd</div>';
+                    echo '<div class="alert alert-success" role="alert">U bent ingelogd en wordt nu doorgestuurd</div>';
                     header("Refresh: 5; ./index.php?content=home");
                 break;
                 case 2:
-                    echo '<div class="alert alert-success" role="alert">Uw bent ingelogd als admin u en word nu doorgestuurd</div>';
+                    echo '<div class="alert alert-success" role="alert">U bent ingelogd als admin u en wordt nu doorgestuurd</div>';
                     header("Refresh: 5; ./index.php?content=home");
                 break;
             }

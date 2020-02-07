@@ -84,7 +84,6 @@
                 $id = mysqli_insert_id($conn);
                 setcookie("$value", "", time() - 3600);
             }
-            setcookie("winkelwagen", "", time() - 3600);
           }
 //check of schrijven naar de DB is gelukt
           if ($result && $result1 && $result2 && $result3 && $result4){
@@ -98,15 +97,19 @@
             </style>
             <head>
                 <title>Bestelling</title>
+                <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
+                integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
+      
+                <link rel='stylesheet' href='./css/style.css'>
             </head>
             <body>
-            <ul class='nav justify-content-center'>
-                <li class='nav-item' id='nav'>
-                    <img src='' width='250' height='75' alt='Utrechtse Fietsenwinkel'>
-                </li>
-            </ul>
-            <h1>U bestelling is geslaagd!</h1>
+            
+            <h3>Bedankt voor uw bestelling, " . $voornaam . ".<br>
+            Met de link hieronder kunt u de factuur bekijken:</h3>
             <a href='http://www.utrechtsefietsenwinkel.nl/factuur?id=" . $factuurcode . "&idv=" . $factuurcode_versleuteld . "'>Factuur</a>
+
+            <br>
+            <h5>We hopen u vaker terug te zien bij utrechtsefietsenwinkel.nl</h5>
             
             </body>
             </html>";
@@ -115,7 +118,7 @@
             $headers .= "From: no-reply@utrechtsefietsenwinkel.nl". "\r\n";
 
             mail($to, $subject, $messege,$headers);
-                echo '<div class="alert alert-success" role="alert">Wij hebben u een bevestigings mail gestuurt</div>';
+                echo '<div class="alert alert-success" role="alert">Wij hebben u een bevestigingsmail gestuurd</div>';
                 header("Refresh: 10; url=./index.php?content=home");
             // header("Refresh: 0; url=./index.php?content=./fuctions/mail");
             }else {
@@ -126,4 +129,7 @@
             echo '<br><div class="alert alert-danger" role="alert">U heeft niks in u bestelling staan</div>';
             header("Refresh: 10; url=./index.php?content=producten");
         }
+
+setcookie("winkelwagen", "", time() - 3600);
+
 ?>

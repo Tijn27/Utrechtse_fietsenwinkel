@@ -43,7 +43,7 @@
                         <body>
                           <h2>Nieuw account:</h2>
                           <p>Er is een nieuw account aangemaakt met de gebruikersnaam: $email</p>
-                          <p>Als u dit account niet heeft aangemaak kunt uw deze blokeren door op de onderstaande link te klikken</p>
+                          <p>Als u dit account niet heeft aangemaakt, kunt uw deze blokkeren door op de onderstaande link te klikken</p>
                           <a href='http://www.utrechtsefietsenwinkel.nl/index.php?content=gebruikers'>Beheer gebruikers</a>
                           <p></p>
                         </body>
@@ -53,7 +53,7 @@
         $headers .= "From: admin@ExcersiceMe.nl". "\r\n";
 
         mail($to, $subject, $messege,$headers);
-        echo '<br><div class="alert alert-success" role="alert">Het nieuwe account is succesvol gecreerd</div>';
+        echo '<br><div class="alert alert-success" role="alert">Het nieuwe account is succesvol gecreeërd</div>';
         header("Refresh: 10; url=./index.php?content=home");
       } else {
         echo '<br><div class="alert alert-danger" role="alert">Er is iets misgegaan tijdens het registreren, probeer het nogmaals</div>';

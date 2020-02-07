@@ -24,14 +24,14 @@ if(!isset($_COOKIE['winkelwagen'])) {
         //bij de select woord de hoeveelheid die de gebruiker van een product heeft als standaart geselecteerd
         echo "<li class='list-group-item'>
             <div class='row'>
-                <div class='col-5'>"
-                    . $row["productNaam"] . "
+                <div class='col-5'><a style='font-size: 20px;'>"
+                    . $row["productNaam"] . "</a>
+                </div>
+                <div class='col-sm'><a style='font-size: 20px;'>
+                    € " . $row["kosten"] . "</a>
                 </div>
                 <div class='col-sm'>
-                    € " . $row["kosten"] . "
-                </div>
-                <div class='col-sm'>
-                    <p style='text-align: right;'>Aantal:</p>
+                    <p style='text-align: right; font-size: 20px;'>Aantal:</p>
                 </div>
                 <div class='col-sm'>
                 <form action='./index.php?content=./fuctions/aantal_bewerken' method='post'>
@@ -61,10 +61,10 @@ if(!isset($_COOKIE['winkelwagen'])) {
     }
     echo "<li class='list-group-item' style='background-color: #d1d9ff;'>
             <div class='row'><div class='col-5'>   	
-                Totaal: 
+            <a style='font-size: 20px;'> Totaal:<a> 
             </div>
             <div class='col-sm'>
-                € " . $totaal . "
+                <a style='font-size: 20px;'>€ " . $totaal . "</a>
             </div>
             <div class='col-sm'>
             </div>

@@ -13,7 +13,7 @@ echo "<div class='row'>
             include("./gebruikers.php");
     echo"</div>
         <div class='col'>";
-            include("./bestelling.php");
+            include("./registreer.php");
     echo"</div>
     </div>";
 ?>

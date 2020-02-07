@@ -59,7 +59,7 @@
             }elseif($_COOKIE['winkelwagen'] == '[]'){
             }else{
               echo '<li class="nav-item">
-                      <a id="active_bestelling" class="nav-link" href="index.php?content=bestelling">bestelling</a>
+                      <a id="active_bestelling" class="nav-link" href="index.php?content=bestelling">Bestelling</a>
                     </li>';
             }
           ?>

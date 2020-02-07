@@ -20,7 +20,7 @@ if(isset($_POST["select"])){
             $magVerandertwoorden = true;
         }else{
             $magVerandertwoorden = false;
-            echo '<div class="alert alert-danger" role="alert">Deze gebruikersrol kan niet verandert worden, omdat er minimaal 1 admin blijven bestaan</div>';
+            echo '<div class="alert alert-danger" role="alert">Deze gebruikersrol kan niet worden gewijzigd, er moet minimaal 1 admin blijven bestaan</div>';
             header("Refresh: 5; ./index.php?content=beheren");
         }
     }else{
